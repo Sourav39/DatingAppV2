@@ -9,7 +9,7 @@ namespace API.Controllers;
 [Route("api/[controller]")]
 public class UsersControllers : ControllerBase
 {
-        public DataContext _context { get; }
+    public DataContext _context { get; }
     public UsersControllers(DataContext context)
     {
             _context = context;
