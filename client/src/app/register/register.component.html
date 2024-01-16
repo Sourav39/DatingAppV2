@@ -1,0 +1,26 @@
+
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="row g-3">
+        <div class="col">
+          <input type="text" formControlName="username" class="form-control" placeholder="Username" aria-label="Username">
+        </div>
+
+    <!-- dropdown expample -->
+        <div class="mb-3">
+            <label>Who is your fav user ?</label>
+            <select class="form-select">
+                <option *ngFor="let user of usersFromHome" [value]="user.username">
+                    {{user.userName}}
+                </option>
+            </select>
+        </div>
+        <!-- ------------- -->
+        <div class="col">
+          <input type="password" formControlName="password" class="form-control" placeholder="Password" aria-label="Password">
+        </div>                 
+        <div class="text-center">
+            <button type="submit" class="btn btn-success me-2">Register</button>
+            <button type="button" class="btn btn-default" (click)="reset()">Reset</button>
+          </div>
+      </div>
+</form>
