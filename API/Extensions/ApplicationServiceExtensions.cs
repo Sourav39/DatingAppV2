@@ -21,7 +21,8 @@ namespace API.Extensions
                             builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
                         }));
             services.AddScoped<ITokenService, TokenService>();
-
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             return services;
         }
     }
