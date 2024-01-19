@@ -1,0 +1,142 @@
+<div class="container-sm">
+    <div class="filter-align">
+        <mat-form-field>
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput type="text" (keyup)="doFilter($event)" placeholder="Filter">
+        </mat-form-field>
+    </div>
+    <!-- <div>
+        <button (click)="addEmployee()" mat-raised-button color="primary">Add New
+            Employee</button>
+    </div> -->
+    <!-- <div class="pull-left" (click)="addEmployee()" >
+      <button type="button" class="btn btn-sm btn-primary" disabled>Add New User</button>
+    </div>
+    <div class="pull-right">
+      <button type="button" class="btn btn-secondary btn-sm" disabled>Button</button>
+    </div>     -->
+    <div class="d-grid gap-2 d-md-block">
+      <button class="btn btn-info btn-sm btn-filter-custom" type="button">Add</button>
+      <button class="btn btn-warning btn-sm btn-filter-custom" type="button">Cancel</button>
+    </div>
+</div>
+<div class="container-lg top-margin">
+    <mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="username">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+            <mat-cell  *matCellDef="let element">
+                <div *ngIf="!element.isEdit ">
+                    {{element.username}}
+                  </div>
+          
+                  <div *ngIf="element.isEdit ">
+                    <input [value]="element.username" />
+                  </div>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="age">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Age</mat-header-cell>
+            <mat-cell  *matCellDef="let element">
+                <div *ngIf="!element.isEdit ">
+                    {{element.age}}
+                  </div>
+          
+                  <div *ngIf="element.isEdit ">
+                    <input [value]="element.age" />
+                  </div>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="created">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>created</mat-header-cell>
+            <mat-cell  *matCellDef="let element">
+                <div *ngIf="!element.isEdit ">
+                    {{element.created | date}}
+                  </div>
+          
+                  <div *ngIf="element.isEdit ">
+                    <input [value]="element.created" />
+                  </div>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="gender">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>gender</mat-header-cell>
+            <mat-cell  *matCellDef="let element">
+                <div *ngIf="!element.isEdit ">
+                    {{element.gender}}
+                  </div>
+          
+                  <div *ngIf="element.isEdit ">
+                    <input [value]="element.gender" />
+                  </div>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>country</mat-header-cell>
+            <mat-cell  *matCellDef="let element">
+                <div *ngIf="!element.isEdit ">
+                    {{element.country}}
+                  </div>
+          
+                  <div *ngIf="element.isEdit ">
+                    <input [value]="element.country" />
+                  </div>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Action">
+            <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+            <mat-cell *matCellDef="let element">                    
+                <div *ngIf="!element.isEdit">
+                  <!-- MAT ICON Eg -->
+                   <!-- <a (click)="onEdit(element)">
+                       <span matTooltip="Edit Fileds">
+                       <mat-icon>mode_edit</mat-icon>
+                       </span>
+                     </a>          
+                     <a>
+                       <span matTooltip="Delete">
+                       <mat-icon>delete</mat-icon>
+                       </span>
+                     </a>         -->
+                     <div class="pull-left">
+                      <button type="button" (click)="onEdit(element)" class="btn btn-outline-info btn-sm btn-custom">Edit</button>
+                     </div>
+                     <div class="pull-right">
+                      <button type="button" class="btn btn-outline-danger btn-sm btn-custom">Delete</button>
+                     </div>
+                     
+                </div>
+                <div *ngIf="element.isEdit">
+                   <!-- <a (click)="element.isEdit=false">
+                       <span matTooltip="Save Fileds">
+                       <mat-icon>save</mat-icon>
+                       </span>
+                     </a>                              
+                     <a>
+                       <span matTooltip="Cancel">
+                       <mat-icon>undo</mat-icon>
+                       </span>
+                     </a>         -->
+                     <div class="pull-left">
+                      <button type="button" class="btn btn-outline-success btn-sm btn-custom">save</button>
+                     </div>
+                     <div class="pull-right">
+                      <button type="button" (click)="onCancel(element)" class="btn btn-outline-warning btn-sm btn-custom">Cancel</button>
+                     </div>
+                </div>
+                    
+               </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    </mat-paginator>
+
+</div>

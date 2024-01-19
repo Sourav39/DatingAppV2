@@ -18,6 +18,8 @@ import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { UsersComponent } from './users/users.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
     MessagesComponent,
     TestErrorComponent,
     NotFoundComponent,
-    ServerErrorComponent
+    ServerErrorComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    SharedModule    
+    SharedModule     
   ],
   providers: [
     {

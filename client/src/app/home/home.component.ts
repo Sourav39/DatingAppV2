@@ -1,3 +1,4 @@
+import { getLocaleDateTimeFormat } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
  registerMode = false;
  users : any;
-
+ date : Date = new Date();
  constructor(private http : HttpClient) {}
   ngOnInit(): void {
     this.getUsers();

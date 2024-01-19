@@ -1,0 +1,51 @@
+mat-form-field {
+    height: 66px;
+}
+
+mat-header-row {
+    background-color: lightblue;
+    min-height: 39px;
+}
+
+.top-margin {
+    padding-top: 17px;
+}
+
+a {
+    color: black !important;
+    flex: 0 0 33px;
+  }
+
+mat-table {
+    overflow: auto;
+  }
+
+mat-row {
+    min-height: 38px;
+}
+
+.filter-align {
+    padding-left: 18px;
+}
+
+.field-align {
+    padding-block-start: 20px;
+}
+
+.mat-mdc-table .mdc-data-table__row:hover{
+    background-color: rgba(236, 236, 236, 0.514) !important;
+    }
+
+.btn-custom {
+    min-width: 1.8em;
+    padding: .25em !important;
+    margin-left: .1em;
+    margin-right: .1em;
+}
+
+.btn-filter-custom {
+    min-width: 6.8em;
+    padding: .25em !important;
+    margin-left: .1em;
+    margin-right: .5em;
+}
